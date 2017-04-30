@@ -8,7 +8,7 @@ title: python基础语法
 ## 定义方法
 
 ### 返回多个参数
-```
+```python
 #求list元素之和
 def square_of_sum(L):
 
@@ -24,7 +24,7 @@ print(a,b)
 
 ```
 结果:
-```
+```python
 (55, 0)
 55 0
 ```
@@ -34,7 +34,7 @@ print(a,b)
 
 
 ### 定义默认参数
-```
+```python
 #计算计算x的N次方的函数(这里设置了默认参数则计算平方,方法调用时无需传默认参数)
 def power(x, n=2):
     s = 1
@@ -48,7 +48,7 @@ print(power(6))
 
 
 ### 可变参数(简化调用)
-```
+```python
 # 定义可变参数
 def average(*args):
     print(sum(args)/len(args))
@@ -59,7 +59,7 @@ average(1,2,3)
 ## 循环
 
 ### 循环几次
-```
+```python
 for i in range(2):
     print(i)
 ```
@@ -71,19 +71,19 @@ for i in range(2):
 
 
 ### 类似java foreach
-```
+```python
  for i in list:
      print(i)
 ```
 
 ### 类似java普通for循环
-```
+```python
 for i,v in enumerate(list):
      print(i,list[i])
 ```
 
 ### while循环
-```
+```python
 #simple while iterator
 sum = 0
 x = 1
@@ -96,7 +96,7 @@ print(sum)
 ```
 
 ### 多重循环
-```
+```python
 #多重循环
 for x in ['A', 'B', 'C']:
     for y in ['1', '2', '3']:
@@ -115,7 +115,7 @@ for x in ['A', 'B', 'C']:
 
 
 ## if else
-```
+```python
 age = 19
 if age >= 18:
     print('adult')
@@ -130,7 +130,7 @@ else:
 ## 集合
 
 ### list
-```
+```python
 #define a list
 list = ['apple','orange']
 ##add an object
@@ -148,7 +148,7 @@ len(list)
 > tuple是另一种有序的列表，中文翻译为“ 元组 ”。tuple 和 list 非常类似，但是，tuple一旦创建完毕，就不能修改了。
 > 创建tuple和创建list唯一不同之处是用( )替代了[ ]
 
-```
+```python
 #create a tuple
 _tuple_ = ('a', 'b', ['A', 'B'])
 tuple__ = _tuple_[2]
@@ -159,7 +159,7 @@ javafor(_tuple_)
 
 
 ## dict(格式类似于json,数据结构类似于map,无序的)
-```
+```python
 #define a dict
 d = {
     'Adam': 95,
@@ -179,7 +179,7 @@ for k in d:
 
 
 ## set(和java类似)
-```
+```python
 #create a set
 list = ['lx','fw','lx']
 #将一个List转换为set
@@ -191,7 +191,7 @@ s.remove('lx')
 print(s)
 ```
 结果:
-```
+```python
 {'lx', 'fw'}
 {'duck', 'fw'}
 ```
@@ -200,7 +200,7 @@ print(s)
 ## 切片操作(取部分元素操作)
 
 ### list和tuple的切片
-```
+```python
 #range()函数可以创建一个数列
 L = range(1, 101)
 #前10个数
@@ -214,7 +214,7 @@ print L[4:50:5]
 **把list换成tuple，切片操作完全相同**
 
 ### 字符串的切片
-```
+```python
 #首字母大写
 def firstCharUpper(s):
     return s[0:1].upper()+s[1:]

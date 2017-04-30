@@ -1,7 +1,8 @@
 
-spring XML文件配置
+## spring XML文件配置
+
 ### spring-context
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -14,13 +15,13 @@ spring XML文件配置
 ```
 
 引入context命名空间,这样便可拿到bean
-```
+```java
 ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-context.xml");
 User bean = (User) ctx.getBean("User");
 ```
 
 ### spring-mvc
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -39,7 +40,7 @@ User bean = (User) ctx.getBean("User");
 
 
 ### spring-mybatis
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

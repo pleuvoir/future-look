@@ -7,7 +7,7 @@ title: 爬虫入门
 ## 准备工作
 
 ### 字符串保存为文件
-```
+```python
 def save(filename, contents):
     fh = open(filename, 'w', encoding='utf-8')
     fh.write(contents)
@@ -15,7 +15,7 @@ def save(filename, contents):
 ```
 
 ### 从网上读取并保存二进制文件
-```
+```python
 def read_and_save_file(url,newFileName):
     r = requests.get(url)
     with open(newFileName,'wb') as file:
@@ -25,7 +25,7 @@ def read_and_save_file(url,newFileName):
 ```
 <!-- more -->
 ### 返回网页的干净文本
-```
+```python
 def getHtmlPlainText(url):
     return requests.get(url).text
 
@@ -33,7 +33,7 @@ def getHtmlPlainText(url):
 
 
 ### 获取网页中待下载图片的url
-```
+```python
 def getImagesUrl(url):
     text = getHtmlPlainText(url)
     #匹配图片的正则
@@ -46,7 +46,7 @@ def getImagesUrl(url):
 ## main
 
 ### 获取贴吧具体贴子内图片
-```
+```python
 def fetchPictures(max_page):
 
     print('抓取开始')
@@ -79,7 +79,7 @@ def fetchPictures(max_page):
 
 
 ### 获取帝吧前N页的内容
-```
+```python
 def tieba_crawler(max_pages):
     print('抓取开始')
     startTime = time.time()
@@ -106,7 +106,7 @@ def tieba_crawler(max_pages):
 ```
 
 ## 完整代码
-```
+```python
 #!/user/bin/env python
 # -*- encoding:utf-8 -*-
 

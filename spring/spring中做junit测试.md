@@ -1,7 +1,7 @@
-eclipse生成junit
+# eclipse生成junit
 
 ### 导入依赖
-```
+```xml
 <!-- spring-test依赖 方便junit做spring单元测试 -->
 <dependency>
 	<groupId>org.springframework</groupId>
@@ -26,7 +26,7 @@ eclipse生成junit
 ![](http://i.imgur.com/eaaRUT7.png)
 
 ### 添加spring-test支持
-```
+```java
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({   ////扫描spring配置文件
 				"classpath:spring.xml",
@@ -34,8 +34,7 @@ eclipse生成junit
 public class SeckillServiceTest {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
-	//自动注入
+
 	@Autowired
 	private SeckillService seckillService;
 	
@@ -48,5 +47,4 @@ public class SeckillServiceTest {
 
 }
 ```
-
 
