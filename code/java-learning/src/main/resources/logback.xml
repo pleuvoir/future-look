@@ -9,7 +9,7 @@
     </appender>  
   
     <!-- 日志级别 -->  
-    <root level="INFO">  
+    <root level="DEBUG">  
       <appender-ref ref="console" />  
     </root>  
   

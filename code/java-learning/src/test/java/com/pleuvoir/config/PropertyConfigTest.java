@@ -3,9 +3,9 @@ package com.pleuvoir.config;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.pleuvoir.base.TestBase;
+import com.pleuvoir.base.BaseTest;
 
-public class PropertyConfigTest extends TestBase{
+public class PropertyConfigTest extends BaseTest{
 
 	@Autowired
 	PropertyConfig ppc;

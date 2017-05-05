@@ -3,6 +3,7 @@ package com.pleuvoir.loader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.pleuvoir.RootAppConfig;
+import com.pleuvoir.config.XmlConfig;
 
 /**@author pleuvoir
  * 创建时间: 2017年5月4日 下午9:50:32
@@ -15,9 +16,13 @@ public class Bootstrap {
 	private static class LoaderHelper {
 		
 		private static final AnnotationConfigApplicationContext CONTEXT;
+		
+		private static final XmlConfig SYSTEM_CONFIG;
 
 		static {
 			CONTEXT = initContext();
+			
+			SYSTEM_CONFIG = CONTEXT.getBean(ConfigLoader.class).get();
 		}
 		
 		// 初始化spring容器
@@ -26,6 +31,14 @@ public class Bootstrap {
 			context.registerShutdownHook();
 			return context;
 		}
+	}
+	
+	/**
+	 * 获取系统配置信息
+	 * @return
+	 */
+	public static XmlConfig getConfig(){
+		return LoaderHelper.SYSTEM_CONFIG;
 	}
 	
 	/**
