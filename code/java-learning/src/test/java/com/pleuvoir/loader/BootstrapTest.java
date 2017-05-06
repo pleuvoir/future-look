@@ -1,11 +1,11 @@
 package com.pleuvoir.loader;
 
-import com.pleuvoir.config.PropertyConfig;
+import com.pleuvoir.plugin.ServicePlugin;
 
 public class BootstrapTest {
 
 	public static void main(String[] args) {
-		PropertyConfig ppc = Bootstrap.getBean(PropertyConfig.class);
-		System.out.println(ppc.getName());
+		ServicePlugin service = (ServicePlugin) Bootstrap.getBean("terminalServicePlugin");
+		System.out.println(service.getServiceName("oracle"));
 	}
 }
