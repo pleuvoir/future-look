@@ -73,7 +73,6 @@ public class DefaultServicePlugin extends AbstractLog implements ServicePlugin {
 		this.location = location;
 	}
 
-	@Override
 	public Resource[] scanning() {
 		try {
 			return ResourcePatternUtils

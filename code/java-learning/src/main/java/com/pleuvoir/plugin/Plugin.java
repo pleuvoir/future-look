@@ -26,11 +26,4 @@ public interface Plugin {
 	 */
 	void setLocation(String location);
 	
-	
-	/**
-	 * 扫描插件目录下资源
-	 * @param location
-	 * @return
-	 */
-	Resource[] scanning();
 }
