@@ -11,7 +11,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-import com.pleuvoir.config.XmlConfig;
 import com.pleuvoir.loader.ConfigLoader;
 import com.pleuvoir.loader.XmlConfigLoader;
 import com.pleuvoir.plugin.DefaultServicePlugin;
@@ -26,6 +25,17 @@ import com.pleuvoir.plugin.ServicePlugin;
 @ComponentScan({"com.pleuvoir"})   //or @ComponentScan(basePackageClasses = RootAppConfig.class)
 public class RootAppConfig {
 	
+	/**
+	 * 容器启动时映射xml文件属性到实体对象
+	 * @return
+	 */
+	@Bean(name="configLoader", initMethod="load")
+	public ConfigLoader getConfigLoader(){
+		ConfigLoader loader = new XmlConfigLoader();
+		loader.setLocation("classpath:config.xml");
+		return loader;
+	}
+	
 	
 	@Bean(name="terminalServicePlugin", initMethod="load")
 	public ServicePlugin getTerminalServicePlugin() throws ClassNotFoundException, IOException, DocumentException{
@@ -35,17 +45,6 @@ public class RootAppConfig {
 	}
 	
 	
-	/**
-	 * 容器启动时映射xml文件属性到实体对象
-	 * @return
-	 */
-	@Bean(name="configLoader", initMethod="load")
-	public ConfigLoader getConfigLoader(){
-		ConfigLoader loader = new XmlConfigLoader();
-		loader.setLocation("classpath:config.xml");
-		loader.setTargetClass(XmlConfig.class);
-		return loader;
-	}
 	
 	
 	@Bean

@@ -19,7 +19,6 @@ public class XmlConfigLoader extends AbstractLog implements ConfigLoader {
 	private Resource res;
 	private String location;
 	private XmlConfig config;
-	private Class<?> clazz;
 	
 	@Override
 	public void setLocation(String location) {
@@ -36,7 +35,7 @@ public class XmlConfigLoader extends AbstractLog implements ConfigLoader {
 		InputStream input = null;
 		try {
 			input = res.getInputStream();
-			JAXBContext context = JAXBContext.newInstance(clazz);
+			JAXBContext context = JAXBContext.newInstance(XmlConfig.class);
 			Object configObj = context.createUnmarshaller().unmarshal(input);
 			config = (XmlConfig)configObj;
 			logger.info("加载配置完成：{}", location);
@@ -51,9 +50,5 @@ public class XmlConfigLoader extends AbstractLog implements ConfigLoader {
 		return config;
 	}
 
-	@Override
-	public void setTargetClass(Class<?> clazz) {
-		this.clazz = clazz;
-	}
 
 }

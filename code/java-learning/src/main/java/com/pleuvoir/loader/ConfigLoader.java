@@ -14,11 +14,6 @@ public interface ConfigLoader {
 	 */
 	void setLocation(String location);
 	
-	/**
-	 * 映射到的实体对象
-	 * @param clazz
-	 */
-	void setTargetClass(Class<?> clazz);
 
 	void load();
 	
