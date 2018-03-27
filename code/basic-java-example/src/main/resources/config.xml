@@ -19,7 +19,7 @@
 
 		<datasource>
 			<name>mysql</name>
-			<driveclass>com.mysql.jdbc.Driver</driveclass>
+			<driverclass>com.mysql.jdbc.Driver</driverclass>
 		</datasource>
 	</datasources>
 	

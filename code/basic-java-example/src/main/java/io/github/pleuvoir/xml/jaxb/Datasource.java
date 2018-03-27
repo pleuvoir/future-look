@@ -15,5 +15,5 @@ public class Datasource {
 	
 	@XmlElement
 	@Getter
-	private String driveclass;
+	private String driverclass;
 }
