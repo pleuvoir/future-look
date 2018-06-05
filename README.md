@@ -1,8 +1,5 @@
 
 
-
-![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)
-
 :umbrella:
 
 ### 2018 
@@ -12,4 +9,5 @@
 - [ ] 知行合一王阳明3
 - [ ] 传习录
 - [ ] 充足理由律的四重根
+- [ ] 撒哈拉的故事
 
