@@ -1,2 +1,5 @@
 
 * linguist-language=html
+*.project
+*.prefs
+*.classpath
