@@ -1,0 +1,6 @@
+<plugin-channel>
+	<type>mysql</type>
+	<service>
+		<bean id="Bootstrap" class="com.pleuvoir.loader.Bootstrap"/>
+	</service>
+</plugin-channel>
